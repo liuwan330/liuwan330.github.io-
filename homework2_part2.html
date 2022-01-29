@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="Basic Operations part 2" content="Create a webpage that contains a script that inputs
+ three integers via form text boxes and displays the sum, average, and product of the 
+ three integers, and the smallest and largest of the three integers. ">
+<title>Part 2</title>
+
+<section>
+    <button>
+        <a href="hw2.html">Go Back </a>
+    </button>
+</section>
+
+<section>
+    <h1>Part 2</h1>
+</section>
+
+<style>
+input {text-align: right;}
+body {background-color: #d3d3ddf2;}
+.body { width: 550px; margin: 0px auto;}
+</style>
+
+
+<script>
+function process()
+{
+var number1, number2, number3, n1, n2, n3, sum, average, product, max, min;
+
+
+number1 = document.forms["myform"].elements["num1"].value;
+number2 = document.forms["myform"].elements["num2"].value;
+number3 = document.forms["myform"].elements["num3"].value;
+
+n1 = parseInt(number1);
+n2 = parseInt(number2);
+n3 = parseInt(number3);
+sum = n1 + n2 + n3;
+average = (n1 + n2 + n3)/3;
+product = n1 * n2 * n3;
+
+var arr = [n1, n2, n3];
+max = Math.max(...arr);
+min = Math.min(...arr);
+
+var error = isNaN(n1) || isNaN(n2) || isNaN(n3);
+
+
+
+var output;
+        if (error){
+            output = "Error! Please enter numbers only!";
+        } 
+        else{
+              output = "The sum of the integers is " + sum + "\nThe average of the integers is"
+              + average + "\nThe product of the integers is " + product + "\nThe biggest of the integers is "
+              + max + "\nThe smallest of the integers is " + min ;
+        }
+
+        document.forms["myform"].elements["result"].value = output;
+
+
+}
+</script>
+
+
+
+
+</head>
+<body>
+<section class="body">
+<form name="myform">
+<table>
+<tr>
+<td>First Number:</td>
+<td><input type="text" name="num1" size="10"></td>
+</tr>
+<tr>
+<td>Second Number:</td>
+<td><input type="text" name="num2" size="10"></td>
+</tr>
+<tr> 
+<td>Third Number:</td>
+<td><input type="text" name="num3" size="10"></td>
+</tr>
+</table>
+<br> Results:
+
+<textarea rows="8" cols="40" name="result">
+</textarea>
+<br><br>
+<input type="button" onclick="process()" value="SUBMIT">
+<input type="reset" value="RESET">
+</form>
+</section>
+</body>
