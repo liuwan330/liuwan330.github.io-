@@ -2,6 +2,12 @@ header{
     font-size: 40px;
     background-color: darkgray;
 }
+.intro{
+    border: 2px solid black;
+    background-image: url(image/greatWall.JPG);
+    background-size:100% 100%;
+}
+
 .table{
     border: 2px solid black; 
 } 
