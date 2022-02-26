@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+<title>Form Homework3-Part2</title>
+<style>
+    input {text-align: right;}
+    body {background-color: #eeeecc;}
+    .body { width: 550px; margin: 0px auto;}
+     
+</style>
+
+<script>
+function process() 
+{
+    var items, item1, item2,item3,item4, item1Total,item2Total,item3Total,item4Total,totalAmountSold, totalWeeklyEarnings;
+    
+    item1 = parseFloat(document.getElementById("item1").value);
+    item2 = parseFloat(document.getElementById("item2").value);
+    item3 = parseFloat(document.getElementById("item3").value);
+    item4 = parseFloat(document.getElementById("item4").value);
+
+    outputNumber("item1Output", item1);
+    outputNumber("item2Output", item2);
+    outputNumber("item3Output", item3);
+    outputNumber("item4Output", item4);
+   
+    item1Total = parseFloat((20.99 * item1).toFixed(2));
+    item2Total = parseFloat((12.75 * item2).toFixed(2));
+    item3Total = parseFloat((9.95 * item3).toFixed(2));
+    item4Total = parseFloat((35.89 * item4).toFixed(2));
+
+    outputNumber("item1Total", item1Total);
+    outputNumber("item2Total", item2Total);
+    outputNumber("item3Total", item3Total);
+    outputNumber("item4Total", item4Total);
+ 
+    if (item1<0||item2<0||item3<0||item4<0) {
+        document.getElementById("totalAmountSold").value = "Error";    
+    } 
+    else{
+    totalAmountSold = parseFloat((item1Total + item2Total + item3Total + item4Total).toFixed(2));
+    outputNumber("totalAmountSold", totalAmountSold);}
+    
+    if (item1<0||item2<0||item3<0||item4<0) {
+        document.getElementById("totalWeeklyEarnings").value = "Error";    
+    } 
+    else{
+    totalWeeklyEarnings = (totalAmountSold*0.09 + 250).toFixed(2);
+    outputNumber("totalWeeklyEarnings", totalWeeklyEarnings);
+    }
+
+
+
+
+function outputNumber(id, number) {
+    if (isNaN(number)) {
+        document.getElementById(id).value = "Error";    
+    } 
+
+    else if (number<0){
+        document.getElementById(id).value = "Error"; 
+    }
+
+    else {
+        document.getElementById(id).value = number;
+    }
+    
+    }
+
+}   
+</script>
+</head>
+<body>
+    <button>
+        <a href="hw3.html">Go Back </a>
+    </button>
+
+<section class="body">
+
+<h3>Homework 3- Part 2 Sample Display</h3>
+
+
+<form name="myform">
+<table class="name">
+    <tr>
+    <td><label for="name"> Salesperson:</label></td>
+    <td><input type="text" id="name" name="num1" size="37"></td>
+    </tr>
+</table>
+
+<h3>Input the number of items sold for each item number:</h3>
+<table class="items">
+    <tr>
+    <td><label for="item1">Item 1:</label></td>
+    <td><input type="number" id="item1" name="item1" size="27"></td>
+    </tr>
+
+    <tr>
+    <td><label for="item2">Item 2:<label></td>
+    <td><input type="number" id="item2" name="item2" size="27"></td>
+    </tr>
+
+    <tr>
+    <td><label for="item3">Item 3:</label></td>
+    <td><input type="number" id="item3" name="item3" size="27"></td>
+    </tr>
+
+    <tr>
+    <td><label for="item4">Item 4:</label></td>
+    <td><input type="number" id="item4" name="item4" size="27"></td>
+    </tr>
+</table>
+
+<br><br>
+
+<input type="button" onclick="process()" value="SUBMIT">
+<input type="reset" value="RESET">
+
+
+<table>
+    <tr>
+        <th>Item#</th>
+        <th>Price</th>
+        <th>Number Sold</th>
+        <th>Total</th>
+        <tr>
+            <td>1</td>
+            <td>$20.99</td>
+            <td><input type="text" id="item1Output" name="item1Output" size="37" readonly></td>
+            <td><input type="text" id="item1Total" name="item1Total" size="37" readonly></td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>$12.75</td>
+            <td><input type="text" id="item2Output" name="item2Output" size="37" readonly></td>
+            <td><input type="text" id="item2Total" name="item2Total" size="37" readonly></td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>$9.95</td>
+            <td><input type="text" id="item3Output" name="item3Output" size="37" readonly></td>
+            <td><input type="text" id="item3Total" name="item3Total" size="37" readonly></td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>$35.89</td>
+            <td><input type="text" id="item4Output" name="item4Output" size="37" readonly></td>
+            <td><input type="text" id="item4Total" name="item4Total" size="37" readonly></td>
+        </tr>
+
+        <tr>
+            <td colspan="3">Total Amount Sold:</td>
+            <td><input type="text" id="totalAmountSold" name="totalAmountSold" size="37" readonly></td>
+        </tr>
+
+        <tr>
+            <td colspan="3">Total Weekly Earnings:</td>
+            <td><input type="text" id="totalWeeklyEarnings" name="totalWeeklyEarnings" size="37" readonly></td>
+        </tr>
+
+
+        
+    </tr>
+</table>
+
+
+</form>
+</section>
+</body>
+</html>

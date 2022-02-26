@@ -8,9 +8,9 @@
 <title>Part 2</title>
 
 <section>
-    <button>
-        <a href="hw2.html">Go Back </a>
-    </button>
+    
+     <button>  <a href="hw2.html">Go Back </a>  </button>
+    
 </section>
 
 <section>
@@ -51,7 +51,7 @@ var error = isNaN(n1) || isNaN(n2) || isNaN(n3);
 
 var output;
         if (error){
-            output = "Error! Please enter numbers only in the above 3 text boxes. ";
+            output = "Error! Please enter numbers only in the above 3 text boxes.";
         } 
         else{
               output = "The sum of the integers is " + sum + "\nThe average of the integers is"
@@ -64,31 +64,29 @@ var output;
 
 }
 </script>
-
-
-
-
 </head>
 <body>
 <section class="body">
-<form name="myform">
+   <form name="myform">
 <table>
 <tr>
-<td>First Number:</td>
-<td><input type="text" name="num1" size="10"></td>
+<td><label for="num1">First Number:</label></td>
+<td><input type="text" id="num1" name="num1" size="10"></td>
+
 </tr>
 <tr>
-<td>Second Number:</td>
-<td><input type="text" name="num2" size="10"></td>
+<td><label for="num2">Second Number:</label></td>
+<td><input type="text" id="num2" name="num2" size="10"></td>
 </tr>
 <tr> 
-<td>Third Number:</td>
-<td><input type="text" name="num3" size="10"></td>
+<td><label for="num3">Third Number:</label</td>
+<td><input type="text" id="num3" name="num3" size="10"></td>
 </tr>
 </table>
-<br> Results:
+<br> 
+<label for = "results">Results:</label>
 
-<textarea rows="8" cols="40" name="result">
+<textarea id = "results" readonly rows="8" cols="40" name="result">
 </textarea>
 <br><br>
 <input type="button" onclick="process()" value="SUBMIT">
