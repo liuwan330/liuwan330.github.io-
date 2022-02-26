@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="description" content="summary of what this page is about">
-<title></title>
-</head>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        
+            
+      </head>
+
+
 <body>
 
 <header>
@@ -16,7 +22,116 @@
     </button>
 </section>
 <section>
-    <h1>Coming Soon</h1>
+    <h1>CIS 114 Homework 3 - Functions</h1>
+
+
+
+<div class="container">
+    <h6>Click on the button to toggle between showing and hiding content.</h6>
+
+    <button type="button" style="width:100%; height:50px;" class="btn btn-info" data-toggle="collapse" data-target="#demo">Part 1</button>
+    <div id="demo" class="collapse in">
+        Create a webpage that contains the heading Student Grades, and inputs a student's homework average, mid-term exam score, final exam score, and participation (all those grades will be entered as integers). Create a script that checks for valid input, i.e., that the input is between 0-100 and that, of course, the input are all numbers. If all input is valid then calculate and display the student's final average according to the formula:
+
+        final average = (.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * participation)
+            
+        Using form text boxes, display the student's final average (rounded to an integer) and final letter grade using the following criteria: 
+            
+            
+        grade points to letter grade:
+        90-100=A,
+        80-89=B,
+        70-79=C,
+        60-69=D,
+        0-59=F.
+            
+        If the student's final grade is 'D' or 'F' then display "Student must retake the course". Be sure to check for valid input and do not allow users to input values that will return NaN or any other "weird" result.  An error message should be displayed if the input is invalid and no result should be presented and if all input is valid, the result should be presented as requested and no error message should be shown!
+            
+        The user should be able to reuse that same form for another student!
+        <br>
+        <button>
+            <a href="homework3_part1.html"> Go to part 1 </a>
+        </button>
+    </div>
+</div>
+<div class="container">
+    <button type="button" style="width:100%; height:50px;" class="btn btn-info" data-toggle="collapse" data-target="#demo2">Part 2</button>
+    <div id="demo2" class="collapse">
+        Create a web page that contains a script that includes at the top of your form  a text box for the salesperson's name for the 
+        user to enter.
+        Next input that salesperson's items sold. Then calculates how much the salesperson sold and how much they earned, and then output 
+        the results. Be sure to round the outputted results to 2 decimal places (money is not represented with more than 2 decimals, right?).
+         Use input boxes to input the number sold for each of the items 1-4. You should also check for valid numeric input 
+         (make sure the number of items sold is never negative, < 0, as nobody sells negative number of items, right?) and right-justify all 
+         amounts. Here is an image showing a possible display that is using tables, and form elements (labels, input boxes, buttons, etc.)
+         <br>
+         <button>
+             <a href="homework3_part2.html"> Go to part 2 </a>
+         </button>
+         
+    </div>
+</div>
+<div class="container">
+    <button type="button" style="width:100%; height:50px;" class="btn btn-info" data-toggle="collapse" data-target="#demo3">Part 3</button>
+    <div id="demo3" class="collapse">
+        Create a web page using input boxes that will calculate the conversion from Celsius to Farenheit (C to F) 
+        or the conversion to Farenheit to Celsius (F to C) according to the formulas below:
+
+        C = 5/9 * (F - 32) 
+        
+        F = (9/5 * C) + 32
+        
+        The user will be allowed to enter a number in ONE input box you will provide. Then, you will provide two buttons: 
+        one to convert from Celsius to Farenheit and another button to convert from Farenheit to Celsius. Your form should have another input
+         box or textarea that the user will not be allowed to write anything as that's where you will put the result.
+        
+        When the user clicks on one of those buttons, you need to convert the temperature entered by the user, using the right function to
+         convert from C to F or from F to C. Please, make sure you present the output in a way that the user can understand - for example, 
+         if the user types the number 32 in the input box and clicks on the button to convert Farenheit to Celsius, you would present the 
+         output text as something like: "32F is 0C"
+        
+        If the user's input is invalid, present an error message and do not display any result. If the user's input is valid, present the 
+        converted result and do not present any past error message!
+        
+        [Note that 0 degrees Celsius = 32 degrees Fahrenheit].
+        
+        Make sure you present the final converted temperature WITH NO DECIMAL VALUES as generally the temperature (weather forecast) is 
+        presented to the public, just the integer number of the temperature. Remember that negative temperature IS VALID!
+        <br>
+        <button>
+            <a href="homework3_part3.html"> Go to part 3 </a>
+        </button>
+    </div>
+</div>
+
+<div class="container">
+    <button type="button" style="width:100%; height:50px;" class="btn btn-info" data-toggle="collapse" data-target="#demo4">Extra Credit</button>
+    <div id="demo4" class="collapse">
+        Computers are playing an increasing role in education. Write a program that will help an elementary school student learn multiplication.
+         Use Math.random to produce two one-digit integers (NO DECIMALS) from 0 to 9. It should then display a question such as:
+
+        How much is 6 times 7?
+        
+        The student then types the answer into an input box. Your program checks the student's answer. If it is correct, 
+        display the message "Very good!" in a text area or another part of the page, and then prompt (ask) the user to see whether
+         they wish to continue by using the confirm or prompt statement. If true, then generate a new question. If not, then exit the
+          script and do not present another question - you can present a "goodbye and thanks" message.
+        
+        If the answer to the multiplication question is wrong, display the message "No. Please try again." 
+        directly on the page in a textarea or another part of the page, and let the student try the same question again repeatedly until 
+        the student finally gets it right.
+        
+        A separate function should be used to generate each new question. This function should be called once when the script begins 
+        execution and each time the user answers the question correctly. Note that whether the answer is correct or not, you should clear 
+        the answer box after the question is answered.
+         <br>
+         <button>
+             <a href="homework3_extraCredit.html"> Go to Extra Credit </a>
+         </button>
+         
+    </div>
+</div>
+
 </section>
 
 <footer>
