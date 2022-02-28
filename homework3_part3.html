@@ -13,6 +13,19 @@
     .body { width: 550px; margin: 0px auto;}
      
 </style>
+
+<script>
+  function temperatureConverterC(valNum) {
+    valNum = parseInt(valNum);
+    document.getElementById("outputFahrenheit").innerHTML=parseInt((valNum*1.8)+32);
+  }
+
+  function temperatureConverterF(valNum) {
+    valNum = parseInt(valNum);
+    document.getElementById("outputCelcius").innerHTML=parseInt((valNum-32)/1.8);
+  }
+  </script>
+
 <body>
 
     <button>
@@ -20,34 +33,35 @@
     </button>
 
 <h2>Temperature Converter</h2>
+<hr>
+
 <p>Type a value in the Celsius field to convert  to Fahrenheit:</p>
+
+<p>
+  <label>Celsius</label>
+  <input id="inputCelsius" type="number" placeholder="Celsius" 
+  oninput="temperatureConverterC(this.value)" onchange="temperatureConverterC(this.value)">
+</p>
+
 <hr>
 
 <p>Type a value in the Fahrenheit field to convert  to Celsius:</p>
 
-<p>
-  <label>Celsius</label>
-  <input id="inputCelsius" type="number" placeholder="Celsius" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
-</p>
+
 <p>
     <label>Fahrenheit</label>
-    <input id="inputFahrenheit" type="number" placeholder="Fahrenheit" oninput="temperatureConverter1(this.value)" onchange="temperatureConverter(this.value)">
-  </p>
+    <input id="inputFahrenheit" type="number" placeholder="Fahrenheit" 
+    oninput="temperatureConverterF(this.value)" onchange="temperatureConverterF(this.value)">
+</p>
+
+<hr>
+
 <p>Fahrenheit: <span id="outputFahrenheit"></span></p>
 <p>Celcius: <span id="outputCelcius"></span></p>
-<script>
-function temperatureConverter(valNum) {
-  valNum = parseInt(valNum);
-  document.getElementById("outputFahrenheit").innerHTML=parseInt((valNum*1.8)+32);
-}
-</script>
 
-<script>
-function temperatureConverter1(valNum) {
-  valNum = parseInt(valNum);
-  document.getElementById("outputCelcius").innerHTML=parseInt((valNum-32)/1.8);
-}
-</script>
+
+
+
 
 
 </body>
