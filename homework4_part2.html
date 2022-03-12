@@ -54,7 +54,11 @@ for (var r=0.05; r<0.075; r+=0.01){
 
     
     for (var year =1; year<=10; year++){
-        var A = 1000*(1 + r)*year;
+
+       
+       
+        
+        var A = 1000*(1 + r)**year;
         var Aformatted = A.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
         tableHtml += "<tr><td>"+ year + "</td>"
         tableHtml += "<td>"+ Aformatted +"</td>"
