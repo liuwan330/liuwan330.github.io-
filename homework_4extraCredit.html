@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making Asterisks Squar</title>
+    <script>
+        function checkResult(){
+            var size = parseInt(document.getElementById("size").value);
+            if (isNaN(size)||size<2||size>10)
+            {
+                document.getElementById("output").innerText="Please enter a value from 2 to 10."
+            }
+            else{
+                var squarhtml="<pre>"
+                for (i=1; i<=size;i++){
+                    squarhtml+="* "       
+                }
+
+                for (z=1; z<= size-2; z++){
+
+                    squarhtml+= "<br>"
+
+                    squarhtml+= "* " 
+                    
+                    for (i=1; i<=size-2; i++){
+                        squarhtml+= "  "
+                    }
+                    squarhtml+= "* "
+                }
+                squarhtml+= "<br>"
+                
+                for (i=1; i<=size;i++){
+                    squarhtml+="* "       
+                }
+
+                squarhtml+= "</pre> "
+
+
+
+            
+
+                document.getElementById("output").innerHTML=squarhtml
+  
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <button>
+        <a href="hw4.html">Go Back </a>
+    </button>
+  <h3> Making Asterisks Squar </h3>
+  <hr>
+  <p>
+  <div id="controls">
+    <label id="question"> Enter an integer between 2 and 10, inclusive: </label><br/>
+
+    <input type="text" id="size"><button onclick="checkResult()">Check</button>
+
+  </div>
+  </p>
+  
+<div id="output" style= "font-family: monospace;"></div>
+    
+</body>
+</html>

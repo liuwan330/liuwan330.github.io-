@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 2. calculate compound interest</title>
+<style>
+    #table td, #table th {
+        border: 1px dotted black;  
+        padding: 2px;  
+    }
+    #table table{
+        border-collapse: collapse;
+    }
+    th{
+        background-color: maroon;
+        color: white;
+    }
+    tr:nth-child(even){
+        background-color: rgb(255, 127, 80);
+
+    }
+    tr:nth-child(odd){
+        background-color: yellow;
+    }
+
+</style>  
+
+
+
+</head>
+
+<section>
+    <button>
+        <a href="hw4.html">Go Back </a>
+    </button>   
+</section>
+
+
+
+<body>
+<div id="table"></div>
+<script>
+
+var tableHtml =""
+
+for (var r=0.05; r<0.075; r+=0.01){
+
+    tableHtml +="<br><table>"
+    tableHtml +="<tr><th>Year</th>"
+    tableHtml += "<th> Amount on deposit</th>"
+    tableHtml += "<th>interest Rate</th></tr>"
+
+    
+    for (var year =1; year<=10; year++){
+        var A = 1000*(1 + r)*year;
+        var Aformatted = A.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        tableHtml += "<tr><td>"+ year + "</td>"
+        tableHtml += "<td>"+ Aformatted +"</td>"
+        tableHtml += "<td>"+ r.toFixed(2) + "</td> </tr>"
+
+    }       
+
+    tableHtml +="</table><br>"
+}
+
+document.getElementById("table").innerHTML = tableHtml;  
+</script>
+
+</body>
+
+
+</html>
