@@ -40,15 +40,20 @@
 <h3>Part 1b:</h3>
 <script type="text/javascript">
 
+   
+    var product =1;
     var sum = 0;
-    var product = 1;
+    var number = 3; 
+  
 
-    for ( var number = 3; number <= 18; number += 3 )
-    {
+    while(number <= 18) {
+        product *= number;
         sum += number;
-        product *= number; 
+
+        number += 3;    
     }
- 
+    
+    
     document.write("The result of  3 * 6 * 9 * 12 * 15 * 18 is " + product.toLocaleString()+"<br>");
     document.write("The result of 3 + 6 + 9 + 12 + 15 + 18  is " + sum.toLocaleString());
 
