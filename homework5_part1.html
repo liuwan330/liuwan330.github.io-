@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 1 Input Text Box</title>
+</head>
+<body>
+<a href="hw5.html">Go Back </a>
+<script>
+function atLeastOneElementChecked(inputs) {
+    for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].checked || inputs[i].selected) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function process() {
+    let username = document.getElementById("username").value;
+    let isLanguageSelected = atLeastOneElementChecked(document.getElementsByName("language"));
+    let isVehicleSelected = atLeastOneElementChecked(document.getElementsByClassName("vehicle"));
+    let isAnimalSelected = atLeastOneElementChecked(document.getElementsByClassName("animal"));
+
+    if (!username) {
+        document.getElementById("username_error").style.display = "block";
+    } else {
+        document.getElementById("username_error").style.display = "none";
+    }
+
+    if (!isLanguageSelected) {
+        document.getElementById("language_error").style.display = "block";
+    } else {
+        document.getElementById("language_error").style.display = "none";
+    }
+
+    if (!isVehicleSelected) {
+        document.getElementById("vehicle_error").style.display = "block";
+    } else {
+        document.getElementById("vehicle_error").style.display = "none";
+    }
+
+    if (!isAnimalSelected) {
+        document.getElementById("animal_error").style.display = "block";
+    } else {
+        document.getElementById("animal_error").style.display = "none";
+    }
+
+    if (username && isLanguageSelected && isVehicleSelected && isAnimalSelected) {
+        document.getElementById("success").style.display = "block";
+    } else {
+        document.getElementById("success").style.display = "none";
+    }
+}
+
+function reset() {
+    document.getElementByName("myform").reset();
+}
+</script>
+<div>
+    <form name="myform">
+        <h2>Input text boxes</h2>
+
+        <p>Please put your username:</p>
+        <table>
+            <tr>
+                <td><label for="username">Username:</label></td>
+                <td><input type="text" name="username" id="username"></td>
+            </tr>
+        </table>
+
+        <p id="username_error" style="display: none; color: red;">Error! Please enter a username into the edit box</p>
+
+        <h2>Radio Buttons</h2>
+
+        <p>Choose your favorite Web language:</p>
+
+        <input type="radio" id="html" name="language" value="HTML">
+        <label for="html">HTML</label><br>
+        <input type="radio" id="css" name="language" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="radio" id="javascript" name="language" value="JavaScript">
+        <label for="javascript">JavaScript</label>
+
+        <p id="language_error" style="display: none; color: red;">Error! Please choose a Web language</p>
+
+        <h2>Checkboxes</h2>
+
+        <p>Choose what type of vehicles/vehicles you have:</p>
+
+        <input type="checkbox" id="vehicle1" class="vehicle" name="vehicle1" value="Bike">
+        <label for="vehicle1"> I have a bike</label><br>
+        <input type="checkbox" id="vehicle2" class="vehicle" name="vehicle2" value="Car">
+        <label for="vehicle2"> I have a car</label><br>
+        <input type="checkbox" id="vehicle3" class="vehicle" name="vehicle3" value="Boat">
+        <label for="vehicle3"> I have a boat</label><br>
+
+        <p id="vehicle_error" style="display: none; color: red;">Error! Please choose at least one vehicle</p>
+
+        <h2>Select boxes</h2>
+
+        <p><label for="animal">Choose your favorite animal:</label></p>
+
+        <p>
+            <select id="animal" name="animal">
+                <option value="">-</option>
+                <option value="horse" class="animal">Horse</option>
+                <option value="elephant" class="animal">Elephant</option>
+                <option value="rhino" class="animal">Rhino</option>
+                <option value="whale" class="animal">Whale</option>
+            </select>
+        </p>
+
+        <p id="animal_error" style="display: none; color: red;">Error! Please choose an animal</p>
+
+        <p>
+            <input type="button" onclick="process()" value="Submit">
+            <input type="button" onclick="reset()" value="Reset form">
+        </p>
+    </form>
+</div>
+
+<br>
+<div id="success" style="font-size: x-large; color: green; display: none;">
+    Success!
+</div>
+</body>
+
+
+</html>

@@ -3,25 +3,122 @@
 <head>
 <meta charset="utf-8">
 <meta name="description" content="summary of what this page is about">
-<title></title>
+<title>CIS 114 Homework 5 - Arrays</title>
 </head>
-<body>
+<body style="background-color: rgb(34, 221, 221);">
 
 <header>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </header>
 
 <section>
-    <button>
-        <a href="index.html">Go Back </a>
-    </button>
-</section>
-<section>
-    <h1>Coming Soon</h1>
+<button>
+    <a href="index.html">Go Back </a>
+</button>
 </section>
 
+
+<section>
+<h1>CIS 114 Homework 5 - Arrays</h1>
+</section>
+
+
+<section>  
+<div class="container">
+    <h3>Click on the button to toggle between showing and hiding content.</h3>
+
+    <button type="button" style="width:100%; height:50px; background-color:rgb(209, 154, 180);" class="btn btn-info" data-toggle="collapse" data-target="#demo">Part 1</button>
+    <div id="demo" class="collapse in">
+        Create a webpage containing a form that displays an input text box, a group of radio buttons, 
+        a group of checkboxes, and select items (a drop-down or datalist element); along with 
+        a script that executes form validation.
+        <br>
+        Your script should validate whether the user has entered data in the input text box, 
+        has checked a radio button, has checked at least one checkbox, 
+        and has selected an option from the list of options in the select (or datalist) element.
+        <br>
+        Use a submit button to invoke the validation script, so that the form is processed only 
+        when the form fields are ALL valid. If a field is invalid then display a message to the user.
+        <br>
+        In your form statement, use method="post" and an action that can be a mailto or a webpage 
+        (displaying that the form has been processed), but be sure to use input type="submit" 
+        for your submit button. Alternatively you can leave out the form's action and method, 
+        but then you should use an input type="button", along with displaying any appropriate messages. 
+        <br>
+        Make sure that if you display an error message because of a single field, 
+        you do not clear out the whole entire form unless all the fields would have error messages 
+        associated to them! It's horrible to have the user fill out all the form again when there 
+        was only one field with error, right? 
+        Remember about this type of detail that is related to user experience!
+        <br>
+        <button>
+            <a href="homework5_part1.html"> Go to Part 1: </a>
+        </button>
+    </div>
+</div>
+
+<div class="container">
+<button type="button" style="width:100%; height:50px; background-color: rgb(209, 154, 180);" class="btn btn-info" data-toggle="collapse" data-target="#demo2">Part 2</button>
+    <div id="demo2" class="collapse">
+        Create a 2nd webpage that contains a script that utilizes 2 pulldown menus. 
+        The first one should utilize an onchange event handler. The second should utilize a button 
+        with an onclick event handler to navigate to a page after an option is selected. 
+        Each pulldown menu should include at least 3 URL destinations.  
+        The website should open in another tab/window so the user does not need to use the back 
+        button of the browser to go back to Part 2 page.
+        <br>
+            <button>
+                <a href="homework5_part2.html"> Go to Part 2 </a>
+            </button>        
+    </div>
+</div>
+
+<div class="container">
+<button type="button" style="width:100%; height:50px; background-color:rgb(209, 154, 180);" class="btn btn-info" data-toggle="collapse" data-target="#demo3">Part 3</button>
+    <div id="demo3" class="collapse">
+        Given the following table of data about several of our states from the July/2019 census, 
+        create a webpage that enables the user to enter a state name (full or just the two 
+        characters that represent the state) and have the State Name, State Capital, 
+        and population appear in separate input box or textarea. DO NOT USE ALERT!!!
+        <br>
+        The user should be able to start the script by pressing the button, "State Info". 
+        Just use the states that are given in the following table for your array. 
+        Allow for the user to enter the name or abbreviation of the state in either lower case 
+        or upper case letters. If the user enters a state that you do not have information for 
+        it, give a message that lets the user know which states you are providing information 
+        for - we have 50 states, right? Do not think the user will have the patience to keep 
+        guessing which states you can provide information.
+        <br>
+        Note that solving this problem involves a two-dimensional array. Make sure you validate
+         the input for a correct state abbreviation or state name. If the input is invalid 
+         then display an error message.  If the user enter a state that is not part of the 
+         list, show a message to the user but if the user retypes the state and click the 
+         Submit button and the state is valid, then the "error" message should not be shown and,
+          instead, you should show the information that is coming from the table below - 
+          for example, suppose the user typed "california" (all in lowercase), you could show a 
+          message with something as:
+        <br>
+       <strong><em>Thanks for your inquiry, here is the information you requested:
+            <br>State abbr = CA
+            <br>State Name = California
+            <br>Capital = Sacramento
+            <br>Population = 39,512,223</strong></em>
+        <br>
+        Remember that if the user types an existing state of the United States that you do not 
+        have in your table, do not show a message saying "this state does not exist" as it 
+        would sound "weird" and not correct - instead you should say that "the database does 
+        not have information about this state, we only have information about AL, AK, AZ, AR, 
+        CA, and CO
+            <button>
+                <a href="homework5_part3.html"> Go to Part 3 </a>
+            </button>        
+    </div>
+</div>
+</section>  
 <footer>
 </footer>
-
 </body>
-
 </html>

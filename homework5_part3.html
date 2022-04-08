@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Information about states</title>
+</head>
+<body>
+
+<a href="hw5.html">Go Back</a>
+<h3>Information about states</h3>
+
+<form>
+    <input id="state_input">
+    <label for="state_input">Enter a state name or a two-letter code</label>
+    <br>
+
+    <input type="button" onclick="showStateInfo()" value="State Info">
+    <br>
+    <br>
+</form>
+
+<div id="results"></div>
+
+<script>
+    let statesInfo = [
+        ["AL", "Alabama", "Montgomery", "4,903,185"],
+        ["AK", "Alaska", "Juneau", "731,545"],
+        ["AZ", "Arizona", "Phoenix", "7,278,717"],
+        ["AR", "Arkansas", "Little Rock", "3,017,825"],
+        ["CA", "California", "Sacramento", "39,512,223"],
+        ["CO", "Colorado", "Denver", "5,758,736"],
+    ];
+
+    function showStateInfo() {
+        let stateInput = document.getElementById("state_input").value.trim().toLowerCase();
+
+        let foundStateInfo = null;
+        for (let i = 0; i < statesInfo.length; i++) {
+            if (stateInput == statesInfo[i][0].toLowerCase() || stateInput == statesInfo[i][1].toLowerCase()) {
+                foundStateInfo = statesInfo[i];
+                break;
+            }
+        }
+
+        if (foundStateInfo) {
+            document.getElementById("results").innerText = "Thanks for your inquiry, here is the information you requested:\n" +
+                "State abbr: " + foundStateInfo[0] + "\n" +
+                "State Name: " + foundStateInfo[1] + "\n" +
+                "Capital: " + foundStateInfo[2] + "\n" +
+                "Population: " + foundStateInfo[3] + "";
+        } else {
+            document.getElementById("results").innerText = "The database does not have information about this state, we only have information about AL, AK, AZ, AR, CA, and CO";
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Make a Drop Down Menu</title>
+</head>
+<body>
+
+<a href="hw5.html">Go Back</a>
+<h3>Pull Down Menu 1 (onchange)</h3>
+<p>Select a URL</p>
+
+<form>
+    <select id="mySelect1" onchange="onSelectChange()">
+        <option value="">-</option>
+        <option value="https://www.wikipedia.org/">Wikipedia</option>
+        <option value="https://stackoverflow.com/">Stack Overflow</option>
+        <option value="https://www.w3.org/">W3C</option>
+    </select>
+</form>
+
+<h3>Pull Down Menu 2 (button onclick)</h3>
+<p>Select a URL</p>
+<form>
+    <select id="mySelect2">
+        <option value="">-</option>
+        <option value="https://www.wikipedia.org/">Wikipedia</option>
+        <option value="https://stackoverflow.com/">Stack Overflow</option>
+        <option value="https://www.w3.org/">W3C</option>
+    </select>
+    <br>
+
+    <input type="button" onclick="onButtonClick()" value="Submit">
+</form>
+
+<script>
+    function onSelectChange() {
+        let url = document.getElementById("mySelect1").value;
+
+        if (url != "-") {
+            window.open(url, '_blank');
+        }
+    }
+
+    function onButtonClick() {
+        let url = document.getElementById("mySelect2").value;
+
+        if (url != "-") {
+            window.open(url, '_blank');
+        }
+    }
+</script>
+
+</body>
+</html>
