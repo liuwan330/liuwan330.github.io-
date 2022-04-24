@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+
+    function process()
+    {
+        let numString = document.getElementById("decimalNumber").value;
+
+        if (!/^\d+\.\d{4,}$/.test(numString)) {
+            document.getElementById("error").innerText = "Please enter a number with at least 4 decimal positions!";
+            document.getElementById("error").style.display = "block";
+            document.getElementById("interger").value = "";
+            document.getElementById("sqaureRoot").value = "";
+            document.getElementById("nearestTenth").value = "";
+            document.getElementById("nearestHun").value = "";
+            document.getElementById("nearestThou").value = "";
+            return;
+        }
+
+        let numFloat = parseFloat(numString);
+
+        let numInteger = numFloat.toFixed();
+
+        let sqrtRounded = Math.sqrt(numFloat).toFixed();
+
+        let roundedToTenths = numFloat.toFixed(1);
+
+        let roundedToHundredths = numFloat.toFixed(2);
+
+        let roundedToThousandths = numFloat.toFixed(3);
+
+        document.getElementById("error").style.display = "none";
+        document.getElementById("interger").value = numInteger;
+        document.getElementById("sqaureRoot").value = sqrtRounded;
+        document.getElementById("nearestTenth").value = roundedToTenths;
+        document.getElementById("nearestHun").value = roundedToHundredths;
+        document.getElementById("nearestThou").value = roundedToThousandths;
+
+    }
+
+
+</script>
+
+<a href="hw6.html">Go Back</a>
+
+<h3>Math</h3>
+
+<p>Enter a floating-point number with AT LEAST 4 decimal positions</p>
+
+<form>
+
+    <div id="error" style="display:none; color: red"></div>
+
+    <input type="text" id="decimalNumber" placeholder="Enter Decimal Number" required>
+    <input type="button" onclick="process()" value="Submit">
+
+    <div id="convertDiv" class="convertDiv">
+        <span>Nearest Integer</span>
+        <input class="readOnlyInputs" type="text" readonly id="interger">
+        <br>
+        <span>Square Root</span>
+        <input class="readOnlyInputs" type="text" readonly id="sqaureRoot">
+        <br>
+        <span>Nearest Tenth</span>
+        <input class="readOnlyInputs" type="text" readonly id="nearestTenth">
+        <br>
+        <span>Nearest Hundred</span>
+        <input class="readOnlyInputs" type="text" readonly id="nearestHun">
+        <br>
+        <span>Nearest Thousandths</span>
+        <input class="readOnlyInputs" type="text" readonly id="nearestThou">
+
+</form>
+</div>
+
+</body>
+</html>
