@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> the number of occurrences</title>
+</head>
+<body>
+<a href="hw6.html">Go Back</a>
+
+<h3> The Number of Occurrences</h3>
+
+<script>
+    function messageWindow(message) {
+        let newWindow = window.open("", "", "width=300,height=100");
+        newWindow.document.write("<p>" + message + "</p>");
+    }
+
+    function process() {
+        let haystack = document.getElementById("haystack").value;
+        let needle = document.getElementById("needle").value;
+
+        if (needle.length < 1) {
+            messageWindow("Please enter the search character!");
+            document.getElementById("output").innerText = "";
+            return;
+        }
+
+        let foundOccurrences = 0;
+        for (let i = 0; i < haystack.length; i++) {
+            let character = haystack.charAt(i);
+
+            if (character.toLowerCase() == needle.toLowerCase()) {
+                foundOccurrences++;
+            }
+        }
+
+        if (foundOccurrences == 0) {
+            messageWindow("Search character '" + needle + "' not found in text string!");
+            document.getElementById("output").innerText = "";
+        } else {
+            document.getElementById("output").innerText = "The character was found " + foundOccurrences + " times.";
+        }
+    }
+</script>
+
+<form>
+    <p>
+        <label for="haystack">Text:</label><br>
+        <textarea id="haystack" cols="40" rows="10"></textarea>
+    </p>
+
+    <p>
+        <label for="needle">Character to search:</label><br>
+        <input id="needle" size="1" maxlength="1">
+    </p>
+
+    <p>
+        <button type="button" onclick="process()">Search</button>
+    </p>
+
+    <p>
+        <label for="output">Output:</label><br>
+        <textarea id="output" cols="40" rows="10" readonly></textarea>
+    </p>
+</form>
+
+</body>
+</html>
