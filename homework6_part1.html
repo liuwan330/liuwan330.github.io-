@@ -60,24 +60,26 @@
 
     <div id="error" style="display:none; color: red"></div>
 
-    <input type="text" id="decimalNumber" placeholder="Enter Decimal Number" required>
+    <label for="decimalNumber">  
+    <input type="number" id="decimalNumber" placeholder="Enter Decimal Number" required>
+    </label>
     <input type="button" onclick="process()" value="Submit">
 
     <div id="convertDiv" class="convertDiv">
         <span><label for="interger">Nearest Integer</label></span>
-        <input class="readOnlyInputs" type="text" readonly id="interger">
+        <input class="readOnlyInputs" type="number" readonly id="interger">
         <br>
         <span><label for="sqaureRoot">Square Root</label></span>
-        <input class="readOnlyInputs" type="text" readonly id="sqaureRoot">
+        <input class="readOnlyInputs" type="number" readonly id="sqaureRoot">
         <br>
         <span><label for="nearestTenth">Nearest Tenth</label></span>
-        <input class="readOnlyInputs" type="text" readonly id="nearestTenth">
+        <input class="readOnlyInputs" type="number" readonly id="nearestTenth">
         <br>
         <span><label for="nearestHun">Nearest Hundred</label></span>
-        <input class="readOnlyInputs" type="text" readonly id="nearestHun">
+        <input class="readOnlyInputs" type="number" readonly id="nearestHun">
         <br>
         <span><label for="nearestThou">Nearest Thousandths</label></span>
-        <input class="readOnlyInputs" type="text" readonly id="nearestThou">
+        <input class="readOnlyInputs" type="number" readonly id="nearestThou">
     </div>
 </form>
 
