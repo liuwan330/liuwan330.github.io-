@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 7, Part 2</title>
+    
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="hw7.html">Go Back</a>
+
+    <h1>Assignment 7, Part 2</h1>
+
+    <div id="form" class="hidden">
+        <form>
+            <p>
+                Please enter your name and login
+            </p>
+            
+            <p>
+                <input type="text" id="name" name="name">
+                <label for="name">Name</label>
+            </p>
+            
+            <p>
+                <input type="text" id="login" name="login">
+                <label for="login">Login</label>
+            </p>
+            
+            <p>
+                <button type="button" id="submitButton" onclick="onFormSubmit()">Submit</button>
+            </p>
+        </form>
+    </div>
+    
+    <div id="greeting" class="hidden">
+        <p>Welcome back, <span id="greetingName"></span>!</p>
+    </div>
+    
+    <script>
+        function onFormSubmit() {
+            let name = document.getElementById("name").value;
+            let login = document.getElementById("login").value;
+            
+            document.cookie = "name=" + name + "; path=/";
+           
+            document.cookie = "login=" + login + "; path=/";
+            
+            
+            history.go(0); // refresh the page
+        }
+
+        function getNameCookie() {
+            let cookiePrefix = "name=";
+            
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let cookiesArray = decodedCookie.split(';');
+            
+            for (let i = 0; i < cookiesArray.length; i++) {
+                let cookieString = cookiesArray[i];
+                while (cookieString.charAt(0) == ' ') {
+                    cookieString = cookieString.substring(1);
+                }
+                
+                if (cookieString.indexOf(cookiePrefix) == 0) {
+                    return cookieString.substring(cookiePrefix.length, cookieString.length);
+                }
+            }
+            
+            return "";
+        }
+        
+        let name = getNameCookie();
+        
+        if (name == "") {
+            document.getElementById("form").className = "";
+            document.getElementById("greeting").className = "hidden";
+        } else {
+            document.getElementById("greetingName").innerText = name;
+            document.getElementById("form").className = "hidden";
+            document.getElementById("greeting").className = "";
+        }
+    </script>
+</body>
+</html>
