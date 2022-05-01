@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 7, Part 1</title>
+    
+    <style>
+        #content {
+            border: 1px solid black;
+            font-size: large;
+            width: 500px;
+            padding: 5px;
+        }
+        
+        .backgroundColorWhite {
+            background-color: white;
+        }
+        
+        .backgroundColorYellow {
+            background-color: yellow;
+        }
+        
+        .backgroundColorPink {
+            background-color: pink;
+        }
+        
+        .fontFamilySerif {
+            font-family: serif;
+        }
+        
+        .fontFamilySansSerif {
+            font-family: sans-serif;
+        }
+        
+        .fontFamilyMonospace {
+            font-family: monospace;
+        }
+        
+        .fontFamilyFantasy {
+            font-family: fantasy;
+        }
+        
+        .styleItalic {
+            font-style: italic;
+        }
+        
+        .styleBold {
+            font-weight: bold;
+        }
+        
+        .styleUnderlined {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <a href="hw7.html">Go Back</a>
+
+<script>
+    function update() {
+        let fontFamilySelectElement = document.getElementById("fontFamily");
+        
+        let fontFamilyClass = "";
+        switch (fontFamilySelectElement.options[fontFamilySelectElement.selectedIndex].value) {
+            case "serif":
+                fontFamilyClass = "fontFamilySerif";
+                break;
+            case "sans-serif":
+                fontFamilyClass = "fontFamilySansSerif";
+                break;
+            case "monospace":
+                fontFamilyClass = "fontFamilyMonospace";
+                break;
+            case "fantasy":
+                fontFamilyClass = "fontFamilyFantasy";
+                break;
+        }
+        
+        let contentClasses = fontFamilyClass;
+        
+        let backgroundColorSelectedElement = document.querySelector('input[name="backgroundColor"]:checked');
+        if (backgroundColorSelectedElement) {
+            contentClasses += " " + backgroundColorSelectedElement.id;
+        }
+        
+        if (document.getElementById("styleItalic").checked) {
+            contentClasses += " styleItalic";
+        }
+        
+        if (document.getElementById("styleBold").checked) {
+            contentClasses += " styleBold";
+        }
+        
+        if (document.getElementById("styleUnderlined").checked) {
+            contentClasses += " styleUnderlined";
+        }
+        
+        document.getElementById("content").className = contentClasses;
+    }
+</script>
+
+<h1>Assignment 7, Part 1</h1>
+
+<h2>Text for styling</h2>
+
+<div id="content">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>
+
+<h2>Styling controls</h2>
+
+<fieldset>
+    <legend>Background color</legend>
+
+    <p>
+        <input type="radio" id="backgroundColorWhite" name="backgroundColor" onchange="update()">
+        <label for="backgroundColorWhite">White</label>
+    </p>
+
+    <p>
+        <input type="radio" id="backgroundColorYellow" name="backgroundColor" onchange="update()">
+        <label for="backgroundColorYellow">Yellow</label>
+    </p>
+
+    <p>
+        <input type="radio" id="backgroundColorPink" name="backgroundColor" onchange="update()">
+        <label for="backgroundColorPink">Pink</label>
+    </p>
+</fieldset>
+
+<fieldset>
+    <legend><label for="fontFamily">Font family</label></legend>
+    
+    <p>
+        <select id="fontFamily" name="fontFamily" onchange="update()">
+            <option value="serif">Serif</option>
+            <option value="sans-serif">Sans serif</option>
+            <option value="monospace">Monospace</option>
+            <option value="fantasy">Fantasy</option>
+        </select>
+    </p>
+</fieldset>
+
+<fieldset>
+    <legend>Style</legend>
+    
+    <p>
+        <input type="checkbox" id="styleItalic" name="styleItalic" onchange="update()">
+        <label for="styleItalic">Italic</label>
+    </p>
+    
+    <p>
+        <input type="checkbox" id="styleBold" name="styleBold" onchange="update()">
+        <label for="styleBold">Bold</label>
+    </p>
+    
+    <p>
+        <input type="checkbox" id="styleUnderlined" name="styleUnderlined" onchange="update()">
+        <label for="styleUnderlined">Underlined</label>
+    </p>
+</fieldset>
+
+<script>
+    update();
+</script>
+
+</body>
+</html>
