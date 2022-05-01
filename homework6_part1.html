@@ -54,22 +54,20 @@
 
 <h3>Math</h3>
 
-<p>Enter a floating-point number with AT LEAST 4 decimal positions</p>
+
 
 <form>
 
     <div id="error" style="display:none; color: red"></div>
 
-    <label for="decimalNumber">  
+    <label for="decimalNumber">Enter a floating-point number with AT LEAST 4 decimal positions</label>
+    <br>
     <input type="number" id="decimalNumber" placeholder="Enter Decimal Number" required>
-    </label>
+   
     <input type="button" onclick="process()" value="Submit">
 
     <div id="convertDiv" class="convertDiv">
         <span><label for="interger">Nearest Integer</label></span>
-        <input class="readOnlyInputs" type="number" readonly id="interger">
-        <br>
-        <span><label for="sqaureRoot">Square Root</label></span>
         <input class="readOnlyInputs" type="number" readonly id="sqaureRoot">
         <br>
         <span><label for="nearestTenth">Nearest Tenth</label></span>
