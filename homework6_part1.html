@@ -18,8 +18,8 @@
         if (!/^\d+\.\d{4,}$/.test(numString)) {
             document.getElementById("error").innerText = "Please enter a number with at least 4 decimal positions!";
             document.getElementById("error").style.display = "block";
-            document.getElementById("interger").value = "";
-            document.getElementById("sqaureRoot").value = "";
+            document.getElementById("integer").value = "";
+            document.getElementById("squareRoot").value = "";
             document.getElementById("nearestTenth").value = "";
             document.getElementById("nearestHun").value = "";
             document.getElementById("nearestThou").value = "";
@@ -39,8 +39,8 @@
         let roundedToThousandths = numFloat.toFixed(3);
 
         document.getElementById("error").style.display = "none";
-        document.getElementById("interger").value = numInteger;
-        document.getElementById("sqaureRoot").value = sqrtRounded;
+        document.getElementById("integer").value = numInteger;
+        document.getElementById("squareRoot").value = sqrtRounded;
         document.getElementById("nearestTenth").value = roundedToTenths;
         document.getElementById("nearestHun").value = roundedToHundredths;
         document.getElementById("nearestThou").value = roundedToThousandths;
@@ -67,8 +67,12 @@
     <input type="button" onclick="process()" value="Submit">
 
     <div id="convertDiv" class="convertDiv">
-        <span><label for="interger">Nearest Integer</label></span>
-        <input class="readOnlyInputs" type="number" readonly id="sqaureRoot">
+
+        <span><label for="integer">Nearest Integer</label></span>
+        <input class="readOnlyInputs" type="number" readonly id="integer">
+        <br>
+        <span><label for="squareRoot">Square Root</label></span>
+        <input class="readOnlyInputs" type="number" readonly id="squareRoot">
         <br>
         <span><label for="nearestTenth">Nearest Tenth</label></span>
         <input class="readOnlyInputs" type="number" readonly id="nearestTenth">
