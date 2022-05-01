@@ -3,25 +3,101 @@
 <head>
 <meta charset="utf-8">
 <meta name="description" content="summary of what this page is about">
-<title></title>
+<title>CIS 114 Homework 6 - Objects</title>
 </head>
-<body>
+<body style="background-color: rgb(190, 192, 54);">
 
 <header>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </header>
 
 <section>
-    <button>
-        <a href="index.html">Go Back </a>
-    </button>
-</section>
-<section>
-    <h1>Coming Soon</h1>
+<button>
+    <a href="index.html">Go Back </a>
+</button>
 </section>
 
+
+<section>
+<h1>CIS 114 Homework 6 - Objects</h1>
+</section>
+
+
+<section>  
+<div class="container">
+    <h3>Click on the button to toggle between showing and hiding content.</h3>
+
+    <button type="button" style="width:100%; height:50px; background-color:rgb(89, 157, 234);" class="btn btn-info" data-toggle="collapse" data-target="#demo">Part 1</button>
+    <div id="demo" class="collapse in">
+Create a webpage in which users are allowed to select a page layout and formatting through 
+the use of the className property. Choose at least three form elements such as: radio buttons, 
+select items, checkboxes, and buttons to allow the user to change some CSS property of the 
+page - for example: a group of radio buttons for the user to select background color, a select 
+item for the user to select font size or group of font family, a group of checkboxes where the 
+user can select italic (font style), bold (font weight), etc.
+<br>
+Attention! Remember that certain styles cannot be applied at the same time! For example, it is 
+not possible to offer a group of checkboxes for the user to select different font-sizes as you 
+will not be able to apply all the choices the user can make with a group of checkboxes 
+(in a group of checkboxes the user can select more than one option, right?). So, for this type 
+of style, you could use a group of radio buttons (in a group of radio buttons, the user can 
+only select one option, right?)
+<br>
+You should not ignore any of the choices made by the user which means that once a choice is 
+made, it should remain active on the page or the area selected to apply the changes. 
+The choice should be applied when the choice is made! For example, if you give radio buttons 
+for the background color, such as: cyan, light green, or orange and the user chooses orange, 
+the orange background should be applied immediately! Then, after that choice, if in another 
+option you give checkboxes for the user to choose font bold, and/or font italic and the user 
+selects both checkboxes, then the page should maintain the background color chosen from the 
+radio button and apply the new styles (bold font and italicized font) as well, etc. 
+<br>
+In case of checkboxes, if the user uncheck the mark of a checkbox, the style that was unchecked 
+should be removed from the page or area selected!
+<br>
+        <button>
+            <a href="homework7_part1.html"> Go to Part 1: </a>
+        </button>
+    </div>
+</div>
+
+<div class="container">
+<button type="button" style="width:100%; height:50px; background-color: rgb(89, 157, 234);" class="btn btn-info" data-toggle="collapse" data-target="#demo2">Part 2</button>
+    <div id="demo2" class="collapse">
+        Create a webpage that contains a script using a form that allows the user to input 
+        several lines of text and a search character and uses the String method charAt to 
+        determine the number of occurrences of the search character within the text. 
+        Use a form textarea for the text and a form input box for the search character.
+        <br>
+        If the search character is found within the text, display the number of occurrences 
+        of the search character in another input box or a textarea (of course, those should be 
+        disabled for users to type anything).  
+        <br>
+        If the search character is not found within the text then display within a new window 
+        (using the window.open() method), the message, 'Search character not found in text 
+        string!' along with the search character - make sure that the output input box 
+        (or textarea) would be cleared if that error message is showing, meaning it would not 
+        show any previous result.  
+        <br>
+        Your new window should be a width of 300 pixels, height of 100 pixels, and should not 
+        obscure any of the main content already on the page. 
+        <br>
+        Remember that it does not matter if the user types a lowercase letter to search - 
+        the match should be done and accepted if the text contains the same letter either in 
+        lowercase or uppercase - letter "t" would be found twice in this text "This time"!
+        <br>
+            <button>
+                <a href="homework7_part2.html"> Go to Part 2 </a>
+            </button>        
+    </div>
+</div>
+
+
+</section>  
 <footer>
 </footer>
-
 </body>
-
 </html>
